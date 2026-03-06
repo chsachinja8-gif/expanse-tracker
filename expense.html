@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Expense Tracker</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="expense.css">
+</head>
+
+<body>
+    <a href="index.html"><button>home</button></a>
+
+<header>
+  <h2>Smart Expense Tracker</h2>
+  <button onclick="toggleDark()">Dark Mode</button>
+</header>
+
+<div class="container">
+
+  <!-- Balance -->
+  <div class="card">
+    <h3>Balance: ₹<span id="balance">0</span></h3>
+    <p class="income">Income: ₹<span id="income">0</span></p>
+    <p class="expense">Expense: ₹<span id="expense">0</span></p>
+  </div>
+
+  <!-- Add Transaction -->
+  <div class="card">
+    <h3>Add Transaction</h3>
+    <input type="text" id="desc" placeholder="Description">
+    <input type="number" id="amount" placeholder="Amount">
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <select id="category">
+      <option>Food</option>
+      <option>Shopping</option>
+      <option>Salary</option>
+      <option>Travel</option>
+    </select>
+    <button onclick="addTransaction()">Add</button>
+  </div>
+
+  <!-- Filters -->
+  <div class="card filters">
+    <select id="filterCategory" onchange="filterTransactions()">
+      <option value="All">All Categories</option>
+      <option>Food</option>
+      <option>Shopping</option>
+      <option>Salary</option>
+      <option>Travel</option>
+    </select>
+    <input type="month" id="filterMonth" onchange="filterTransactions()">
+    <button onclick="exportCSV()">Export CSV</button>
+  </div>
+
+  <!-- Transactions -->
+  <div class="card">
+    <h3>Transactions</h3>
+    <div id="transactions"></div>
+  </div>
+
+  <!-- Chart -->
+  <div class="card">
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+<script src="expense.js">
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+:root{
+  --primary:#6366f1;
+  --income:#16a34a;
+  --expense:#dc2626;
+  --bg:#f3f4f6;
+  --card:#ffffff;
+  --text:#111827;
+}
+body.dark{
+  --bg:#111827;
+  --card:#1f2937;
+  --text:#f9fafb;
+}
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  background:var(--primary);
+  color:white;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+}
+.container{
+  padding:20px;
+  max-width:900px;
+  margin:auto;
+}
+.card{
+  background:var(--card);
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  margin-bottom:20px;
+}
+input, select{
+  padding:8px;
+  margin:5px 0;
+  width:100%;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+button{
+  padding:8px 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.income{color:var(--income);}
+.expense{color:var(--expense);}
+.transaction{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid #ddd;
+}
+.filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+canvas{
+  max-width:100%;
+}
